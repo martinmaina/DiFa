@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="735.0" prefWidth="1118.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsController">
+    <stylesheets>
+        <URL value="@/resources/products.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="792.0" prefWidth="1618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="22.0" prefWidth="1527.0">
+               <children>
+                  <TextField onKeyTyped="#searchProduct" prefHeight="31.0" prefWidth="370.0" promptText="Search Product" style="-fx-background-color: transparent; -fx-border-color: #333; -fx-border-width: 0px 0px 1.5px 0px;" />
+                  <FontAwesomeIconView glyphName="SEARCH" size="30" wrappingWidth="40.0" />
+               </children>
+            </HBox>
+            <TableView prefHeight="749.0" prefWidth="1608.0" style="-fx-background-color: transparent;" stylesheets="@../resources/products.css" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="productNameCol" prefWidth="75.0" text="Product Name" />
+                  <TableColumn fx:id="farmerNameCol" prefWidth="75.0" text="Farmer" />
+                  <TableColumn prefWidth="75.0" text="Price per Unit" />
+                  <TableColumn prefWidth="75.0" text="Quantity Available" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
